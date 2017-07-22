@@ -1,18 +1,64 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VueResource from 'vue-resource'
 import KeenUI from 'keen-ui'
+import NotFound from './components/NotFound'
 import Signin from './components/Signin'
+import Admin from './components/admin/Main'
+import AdminProfile from './components/admin/Profile'
+import Manager from './components/manager/Main'
+import ManagerProfile from './components/manager/Profile'
+import Regular from './components/regular/Main'
+import RegularProfile from './components/regular/Profile'
 
 let routes = [
 	{
 		path: '/',
-		name: 'Signin',
+		name: 'home',
 		component: Signin
+	},
+	{
+		path: '/admin',
+		name: 'admin',
+		component: Admin,
+		children: [
+			{
+				path: 'profile',
+				component: AdminProfile
+			}
+		]
+	},
+	{
+		path: '/manager',
+		name: 'manager',
+		component: Manager,
+		children: [
+			{
+				path: 'profile',
+				component: ManagerProfile
+			}
+		]
+	},
+	{
+		path: '/regular',
+		name: 'regular',
+		component: Regular,
+		children: [
+			{
+				path: 'profile',
+				component: RegularProfile
+			}
+		]
+	},
+	{
+		path: '/not-found',
+		component: NotFound
+	},
+	{
+		path: '*',
+		redirect: '/not-found'
 	}
 ]
-
-Vue.use(VueRouter)
-Vue.use(KeenUI)
 
 export default new VueRouter({
 	routes,

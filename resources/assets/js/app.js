@@ -1,5 +1,6 @@
 import router from './routes'
 import App from './components/App'
+import {APP_ENV, APP_URL} from './config'
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -7,11 +8,17 @@ import App from './components/App'
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-// require('./bootstrap');
+Vue.use(VueRouter)
+Vue.use(VueResource)
+Vue.use(KeenUI)
 
 window.Vue = require('vue')
 
 window.Vue.config.productionTip = false
+
+Vue.http.headers.common['X-CSRF-TOKEN'] = document.getElementsByName('csrf-token')[0].getAttribute('content')
+Vue.http.headers.common['Authorization'] = 'Bearer ' + sessionStorage.getItem('id_token')
+Vue.http.options.root = APP_URL
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
