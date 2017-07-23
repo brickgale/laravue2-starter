@@ -37,3 +37,48 @@ hr {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     height: 0;
 }
+
+.app-container {
+    .ui-textbox__label-text {
+        font-size: 12px;
+    }
+
+    .ui-textbox__input {
+        height: 28px;
+        &, .ui-textbox-textarea {
+            font-size: 14px;
+        }
+    }
+
+    .ui-toolbar {
+        .nav-buttons {
+            padding-right: 15px;
+        }
+    }
+
+    .centered-con {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+        max-width: 300px;
+
+        .wrapper {
+            padding: 30px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
+            @media (max-width: 500px) {
+                box-shadow: none;
+            }
+        }
+
+        h3.title {
+            text-align: center;
+            font-size: 22px;
+            margin-top: 0px;
+            font-weight: 400;
+        }
+    }
+}

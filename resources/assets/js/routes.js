@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import VueResource from 'vue-resource'
-import KeenUI from 'keen-ui'
 import NotFound from './components/NotFound'
 import Signin from './components/Signin'
 import Admin from './components/admin/Main'
@@ -10,6 +8,8 @@ import Manager from './components/manager/Main'
 import ManagerProfile from './components/manager/Profile'
 import Regular from './components/regular/Main'
 import RegularProfile from './components/regular/Profile'
+
+Vue.use(VueRouter)
 
 let routes = [
 	{

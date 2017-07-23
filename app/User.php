@@ -30,15 +30,6 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
     public function isAdmin() {
         return $this->role == \Config::get('laravue.role.admin');
     }
