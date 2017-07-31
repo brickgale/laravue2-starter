@@ -12,7 +12,12 @@ export var admin = {
 	profile
 };
 
-export var salesman = {
-	admin_id: '',
+export var manager = {
+	manager_id: '',
+	profile
+};
+
+export var regular = {
+	regular_id: '',
 	profile
 };

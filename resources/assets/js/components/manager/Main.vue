@@ -1,5 +1,5 @@
 <template>
-    <div class="main">
+    <div class="manager-main">
         Manager Main
         <router-view></router-view>
     </div>
@@ -7,7 +7,7 @@
 
 <script>
     export default {
-        name: 'main',
+        name: 'manager-main',
         data() {
             return {
 

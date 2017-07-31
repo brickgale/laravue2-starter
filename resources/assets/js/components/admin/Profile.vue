@@ -1,12 +1,12 @@
 <template>
-    <div class="profile">
+    <div class="admin-profile">
         Admin Profile
     </div>
 </template>
 
 <script>
     export default {
-        name: 'profile',
+        name: 'admin-profile',
         data() {
             return {
 
