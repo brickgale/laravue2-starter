@@ -39,6 +39,9 @@
                 auth.signin(this, this.email, this.password)
             }
         },
+        created() {
+            this.$parent.$emit('restrict-user', 'guest')
+        },
         mounted() {
 
         }

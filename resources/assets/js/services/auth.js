@@ -11,6 +11,9 @@ export default {
 	check(role, callback) {
 
         if (role == 'guest') {
+            if(typeof callback == 'function') {
+                callback()
+            }
             return
         }
         if (sessionStorage.getItem('id_token') != null) {
