@@ -9,13 +9,13 @@ export default {
 		role: null
 	},
 	check(role, callback) {
-
         if (role == 'guest') {
             if(typeof callback == 'function') {
                 callback()
             }
             return
         }
+
         if (sessionStorage.getItem('id_token') != null) {
             Vue.http.get(
                 USER_RESOURCE,
@@ -26,18 +26,19 @@ export default {
 
                 if(typeof callback == 'function') {
                     callback()
-                }
-
-                if (
+                } else {
+                    if (
                         typeof this.user.role != 'undefined' &&
                         typeof role != 'undefined' && 
                         role != this.user.role
                     ) 
-                {
-                    router.push({
-                        name: `${this.user.role}`
-                    })
+                    {
+                        router.push({
+                            name: `${this.user.role}`
+                        })
+                    }
                 }
+
             }, response => {
                 this.signout()
             })

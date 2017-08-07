@@ -47,10 +47,6 @@
                     if(this.auth.user.role != role) {
                         router.push({ name: 'home' })
                     }
-
-                    if(this.auth.user.role) {
-                        router.push({ name: this.auth.user.role })
-                    }
                 }
                 auth.check(role, cb)
             }

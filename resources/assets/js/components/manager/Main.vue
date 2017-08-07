@@ -13,11 +13,18 @@
 
             }
         },
-        created() {
-            this.$parent.$emit('restrict-user', 'manager')
+        methods: {
+            routeLoad() {
+                this.$root.$children[0].$emit('restrict-user', 'manager')
+            }
         },
         mounted() {
-            
+            this.routeLoad()
+        },
+        watch: {
+            '$route' (to, from) {
+                this.routeLoad()
+            }
         }
     }
 </script>
