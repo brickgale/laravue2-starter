@@ -21,6 +21,14 @@ Vue.http.headers.common['X-CSRF-TOKEN'] = document.getElementsByName('csrf-token
 Vue.http.headers.common['Authorization'] = 'Bearer ' + sessionStorage.getItem('id_token')
 Vue.http.options.root = APP_URL
 
+Vue.http.interceptors.push(function(request, next) {
+    next(function(response) {
+        if (response.status == 401 && response.body.message == 'Token has expired') {
+            router.push({ name: 'home' })
+        }
+    })
+})
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
