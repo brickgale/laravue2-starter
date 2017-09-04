@@ -44,7 +44,7 @@
         methods: {
             handleRestrict(role) {
                 let cb = () => {
-                    if(this.auth.user.role != role) {
+                    if(this.auth.user.role != role && role != 'guest') {
                         router.push({ name: 'home' })
                     }
                 }
