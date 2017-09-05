@@ -1,4 +1,4 @@
-# laravue2-starter
+# laravue2-starter [![Build Status](https://travis-ci.org/brickgale/laravue2-starter.svg?branch=master)](https://travis-ci.org/brickgale/laravue2-starter)
 > :ok_hand: Skeleton SPA for Laravel 5.4 and Vue2
 
 ## Setup
