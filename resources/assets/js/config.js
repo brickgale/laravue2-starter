@@ -1,5 +1,5 @@
-export const APP_ENV = 'development';
-export const APP_URL = 'http://localhost:8000';
+export const APP_ENV = process.env.MIX_APP_ENV;
+export const APP_URL = process.env.MIX_APP_URL;
 
 export var profile = {
     first_name: '',

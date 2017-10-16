@@ -80,5 +80,8 @@ let routes = [
 
 export default new VueRouter({
 	routes,
+	hashbang: false,
+    history: true,
+    mode: 'history',
 	linkActiveClass: 'active'
 })

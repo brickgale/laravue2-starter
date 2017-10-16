@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/{vue?}', function() {
     return view('layouts.app');
-});
+})->where('vue', '[\/\w\.-]*');
