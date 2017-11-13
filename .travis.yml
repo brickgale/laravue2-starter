@@ -8,6 +8,8 @@ before_script:
   - mysql -e 'create database homestead_test;'
   - composer self-update
   - composer install --no-interaction
+  - npm install
+  - npm run production
 
 script:
   - vendor/bin/phpunit
