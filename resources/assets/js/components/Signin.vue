@@ -1,7 +1,6 @@
 <template>
     <div class="sign-in">
         <div class="centered-con">
-            <h3 class="title"> Sign-in </h3>
             <div class="wrapper">
                 <form autocomplete="off" @submit.prevent="signin">
                     <div class="form-group">
@@ -14,7 +13,7 @@
                             label="Password" name="password" id="password" type="password" v-model="password" placeholder="Enter Password"
                         ></ui-textbox>
                     </div>
-                    <ui-button type="primary" color="primary">サインイン</ui-button>
+                    <ui-button type="primary" color="primary">Sign-in</ui-button>
                 </form>
             </div>
         </div>
